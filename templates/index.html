@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Main Page</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <div id="storyBox">
+    <div id="storyScreen">
+        <iframe src="storyTemplate.html" id="storyViewer"></iframe>
+    </div>
+  </div>
+</body>
+</html>

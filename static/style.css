@@ -1,0 +1,39 @@
+* {
+    font-family: Arial;
+}
+
+div {
+    display:block
+}
+
+#storyBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(42, 55, 79, 0.6)
+}
+
+#storyScreen {
+    width: 70vw;
+    height: 70vh;
+    margin: auto;
+    margin-top: 7%
+}
+
+#storyViewer {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    padding: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    background-color: white;
+}
