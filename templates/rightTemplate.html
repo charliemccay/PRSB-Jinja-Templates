@@ -24,6 +24,7 @@
             {% for key, value in data.items() %}
                 {% if value is mapping %}
                     <li>{{ key }}:</li>
+                    <!-- comment -->
                     <ul>
                         {{ print_dict(value) }}
                     </ul>
