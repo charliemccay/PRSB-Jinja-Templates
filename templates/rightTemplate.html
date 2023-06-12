@@ -26,10 +26,87 @@
             width: 100%;
         }
 
+        .outer-table tr {
+            margin: 0px;
+            padding: 0px;
+        }
+
     </style>
 </head>
 
 <body>
+    <table class="outer-table">
+    <tbody>
+        {% macro print_dict(data) %}
+            {% for key, value in data.items() %}
+                <!-- if the value is a dictionary -->
+                {% if value is mapping %}
+                    <tr>
+                        {% if key == 'person_demographics' %}
+                            <td>
+                                <table class="table">
+                                    {{ print_dict(value) }}
+                                </table>
+                            </td>
+                        {% elif key == 'problem_list' %}
+                            <td>
+                                {{ print_dict(value) }}
+                            </td>
+                        {% else %}
+                            <td style="background-color: rgba(42, 55, 79, 0.8); width: 15px; color: white;">{{ key }}: </td>                            
+                            <td>
+                                <table>
+                                    {{ print_dict(value) }}
+                                </table>
+                            </td>
+                        {% endif %}      
+                    </tr>
+    
+                <!-- if the value is a list -->
+                {% elif value is sequence %}
+                    <!-- if the first piece value in the list is a dictionary -->
+                    {% if value|length > 0 and value[0] is mapping %}
+                        <tr>
+                            <td>
+                                <table class="table">
+                                    {% for item in value %}
+                                            {{ print_dict(item) }}
+                                    {% endfor %}
+                                </table>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td style="background-color: rgba(42, 55, 79, 0.6); width: 15px; color: white;">{{ key }}: </td>
+                            <td>{{ value }}</td>
+                        </tr>
+                    {% endif %}
+                    
+                {% else %}
+                    <tr>
+                        <td style="background-color: rgba(42, 55, 79, 0.6); width: 15px; color: white;">{{ key }} :</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endmacro %}
+            
+        {{ print_dict(data) }}
+    </tbody>
+    </table>
+
+
+<!-- <td>
+    <table class="table">
+        {% for item in value %}
+                {{ print_dict(item) }}
+        {% endfor %}
+    </table>
+</td> -->
+
+
+
+<!-- <body>
 <table class="outer-table">
 <tbody>
     {% macro print_dict(data) %}
@@ -45,7 +122,6 @@
                     {% else %}
                         <td style="background-color: rgba(42, 55, 79, 0.8); width: 15px; color: white;">{{ key }}: </td>
 
-                        <!-- could put a catch in here? -->
                         <td>
                             <table>
                                 {{ print_dict(value) }}
@@ -84,7 +160,7 @@
         
     {{ print_dict(data) }}
 </tbody>
-</table>
+</table> -->
 
 
 
