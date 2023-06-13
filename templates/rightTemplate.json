@@ -31,16 +31,6 @@
                 "problem_status": {
                     "coded_value": "394774009 | Active problem (qualifier value) |"
                 }
-            },
-
-            {
-                "problem": {
-                    "coded_value": "46635009 | Diabetes mellitus type 1 (disorder) |"
-                },
-                "onset_date": "20000101",
-                "problem_status": {
-                    "coded_value": "394774009 | Active problem (qualifier value) |"
-                }
             }
         ]
     }
