@@ -39,6 +39,7 @@
     <tbody>
         {% macro print_dict(data) %}
             {% for key, value in data.items() %}
+            
                 <!-- if the value is a dictionary -->
                 {% if value is mapping %}
                     <tr>
@@ -95,17 +96,6 @@
     </tbody>
     </table>
 
-
-<!-- <td>
-    <table class="table">
-        {% for item in value %}
-                {{ print_dict(item) }}
-        {% endfor %}
-    </table>
-</td> -->
-
-
-
 <!-- <body>
 <table class="outer-table">
 <tbody>
@@ -161,70 +151,6 @@
     {{ print_dict(data) }}
 </tbody>
 </table> -->
-
-
-
-<!-- <table class="table table-striped-column">
-<thead class="table-dark">
-    <tr>
-        <th scope="col">Patient Information</th>
-    </tr>
-</thead>
-
-<tbody>
-    {% macro print_dict(data) %}
-        {% for key, value in data.items() %}
-            {% if value is mapping %}
-                <tr>
-                    {% if key == 'person_demographics' or key == 'person_name' or key == 'problem_list'%}
-                        <td>
-                            <table>
-                                {{ print_dict(value) }}
-                            </table>
-                        </td>
-                    {% else %}
-                        <td class="left_column">{{ key }} :</td>
-
-                        <td>
-                            <table>
-                                {{ print_dict(value) }}
-                            </table>
-                        </td>
-                    {% endif %}      
-                </tr>
-
-            {% elif value is sequence %}
-                {% if value|length > 0 and value[0] is mapping %}
-                    <tr>
-                        <td>
-                            <table>
-                                {% for item in value %}
-                                    <tr>
-                                        {{ print_dict(item) }}
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </td>
-                    </tr>
-                {% else %}
-                    <tr>
-                        <td class="left_column">{{ key }} :</td>
-                        <td>{{ value }}</td>
-                    </tr>
-                {% endif %}
-            {% else %}
-                <tr>
-                    <td>{{ key }} :</td>
-                    <td>{{ value }}</td>
-                </tr>
-            {% endif %}
-        {% endfor %}
-    {% endmacro %}
-        
-    {{ print_dict(data) }}
-</tbody>
-</table> -->
-
 
 </body>
 </html>

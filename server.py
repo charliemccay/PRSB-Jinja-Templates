@@ -7,7 +7,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # return render_template('rightTemplate.html')
+# STORY TEMPLATE CODE RENDER
+    # return render_template('index.html')
+
+# RIGHT TEMPLATE CODE RENDER
     with open('templates/rightTemplate.json') as file:
         json_data = json.load(file)
 
