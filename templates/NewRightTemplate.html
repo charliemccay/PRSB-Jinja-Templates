@@ -13,17 +13,26 @@
 {% macro inside_list(data) %}
 <ul>
     {% for key, value in data.items() %}
-        <li>{{ key }}: {{ value }}</li>
+        {% if value is iterable and (value is not string and value is not mapping) %}
+           {% set value = value | join(', ') %}
+           <li>{{ key_format_fix(key) }}: {{ value }}</li>
+        {% else %}
+            <li>{{ key_format_fix(key) }}: {{ value }}</li>
+        {% endif %}
     {% endfor %}
 </ul>
 {% endmacro %}
 
 
+{% macro key_format_fix(data) %}
+     {{ data.replace('_', ' ').title() }}
+{% endmacro %}
+
 
 <table class="table table-striped">
     <thead class="table-dark">
         <tr>
-        <th scope="col" style="background-color: rgba(42, 55, 79, 0.8); width:15px;">Patient Information</th>
+        <th scope="col" style="background-color: rgba(42, 55, 79, 0.8); width: 15%;">Patient Information</th>
         <th scope="col" style="background-color: rgba(42, 55, 79, 0.8);"></th>
         </tr>
     </thead>
@@ -35,14 +44,14 @@
                             {{ print_dict(value) }}
                         {% elif key == 'person_name' %}
                             <tr>
-                                <td style="background-color: rgba(42, 55, 79, 0.45); color: white; width:15px;">Patient Name</td>
+                                <td style="background-color: rgba(42, 55, 79, 0.45); color: white;">{{ key_format_fix(key) }}</td>
                                 <td>{{ inside_list(value) }}</td>
                             </tr>
                         {% elif key == 'problem_list' %}
                             <table class="table table-striped">
                                 <thead class="table-dark">
                                     <tr>
-                                    <th scope="col" style="background-color: rgba(42, 55, 79, 0.8);">Problems</th>
+                                    <th scope="col" style="background-color: rgba(42, 55, 79, 0.8); width: 15%;">Problems</th>
                                     <th scope="col" style="background-color: rgba(42, 55, 79, 0.8);"></th>
                                     </tr>
                                 </thead>
@@ -64,7 +73,7 @@
 
                         {% else %}
                             <tr>
-                                <td style="background-color: rgba(42, 55, 79, 0.45); color: white;  width:15px;">{{ key }}: </td>
+                                <td style="background-color: rgba(42, 55, 79, 0.45); color: white;">{{ key_format_fix(key) }}: </td>
                                 <td>{{ value }}</td>
                             </tr>
                         {% endif %}
@@ -72,7 +81,7 @@
                 {% else %}
 
                     <tr>
-                        <td style="background-color: rgba(42, 55, 79, 0.45); color: white;  width:15px;">{{ key }}: </td>
+                        <td style="background-color: rgba(42, 55, 79, 0.45); color: white;">{{ key_format_fix(key) }}: </td>
                         <td>{{ value }}</td>
                     </tr>
 
