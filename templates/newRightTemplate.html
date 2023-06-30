@@ -15,19 +15,13 @@
 
 
 <table class="table table-striped">
-    <thead class="table-dark">
-        <tr>
-        <th scope="col" style="background-color: rgba(255, 255, 255, 0.8); width: 16%;"></th>
-        <th scope="col" style="background-color: rgba(255, 255, 255, 0.8);"></th>
-        </tr>
-    </thead>
     <tbody>
         {% macro render_list(data, indent=0) %}
             {% for key, value in data.items() %}
                 {% if value is mapping %}
                 
                 <tr>
-                    <td style="background-color: rgba(13, 25, 47, 0.516); color: white;">{{" . " * indent}}{{ key_format_fix(key) }}: </td>
+                    <td style="background-color: rgba(13, 25, 47, 0.516); color: white;  width: 17%;">{{"&nbsp;&nbsp;" * indent}}{{ key_format_fix(key) }}: </td>
                     <td style="background-color: rgba(13, 25, 47, 0.516); color: white;"></td>
                 </tr>
                     {{ render_list(value, indent+4) }}
@@ -37,7 +31,7 @@
 
                             {% for item in value %}
                                     <tr>
-                                        <td style="background-color: rgba(13, 25, 47, 0.516); color: white;">{{" . " * indent}}{{ key_format_fix(key) }}: </td>
+                                        <td style="background-color: rgba(13, 25, 47, 0.516); color: white;  width: 17%;">{{"&nbsp;&nbsp;" * indent}}{{ key_format_fix(key) }}: </td>
                                         <td style="background-color: rgba(13, 25, 47, 0.516); color: white;"></td>
                                     </tr>
                                     {{ render_list(item, indent+4) }}
@@ -46,7 +40,7 @@
 
                         {% else %}
                             <tr >
-                                <td>{{" . " * indent}}{{ key_format_fix(key) }}: </td>
+                                <td  width: 17%;>{{"&nbsp;&nbsp;" * indent}}{{ key_format_fix(key) }}: </td>
                                 <td> {{ value }} </td>
                             </tr>
                         {% endif %}
@@ -54,7 +48,7 @@
                 {% else %}
 
                     <tr>
-                        <td>{{" . " * indent}}{{ key_format_fix(key) }}: </td>
+                        <td  width: 17%;>{{"&nbsp;&nbsp;" * indent}}{{ key_format_fix(key) }}: </td>
                         <td> {{ value }} </td>
                     </tr>
 
