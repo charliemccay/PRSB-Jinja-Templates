@@ -1,0 +1,4 @@
+Current Issues with Code:
+- Issues with indentation; cannot use spaces as they do nto work so using fullstops instad, main issue is trying to find a way to not display said fullstops
+- Issues with right column width, unsure how to get the right column to be flexible without taking up half of the available space
+  - current fix is using a set width, however this needs a top header section of the table to be used which look visually messy

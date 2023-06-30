@@ -1,3 +1,35 @@
+<!-- OLD INDENTATION CODE -->
+
+<!-- {% macro render_list(data, indent=0) %}
+    {% for key, value in data.items() %}
+        {% if value is mapping %}
+            <p>{{" . " * indent}}{{ key }}: test 0</p>
+            {{ render_list(value, indent + 4) }}
+        {% elif value is sequence %}
+            {% if value|length > 0 and value[0] is mapping %}
+                {% for item in value %}
+                        <p>{{" . " * indent}}{{ key }}: test 1</p>
+                        {{ render_list(item, indent + 4) }}
+                {% endfor %}
+            {% else %}
+                <p>{{" . " * indent}}{{ key }}: test 2</p>
+            {% endif %}
+        {% else %}
+            <p>{{" . " * indent}}{{ key }}: test 3</p>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+<ul>
+    {{ render_list(data) }}
+</ul> -->
+
+
+
+
+
+<!-- OLD RIGHT TEMPLATE CODE -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
