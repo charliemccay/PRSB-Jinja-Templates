@@ -11,7 +11,7 @@ def home():
     with open('templates/rightTemplate.json') as file:
         json_data = json.load(file)
 
-    with open('templates/old Template R.html') as file:
+    with open('templates/rightTemplate D.html') as file:
         template = Template(file.read())
     
     return template.render(data=json_data)

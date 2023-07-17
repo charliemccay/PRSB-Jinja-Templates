@@ -12,3 +12,10 @@ In GitHub:
   rightTemplate C = same as template B, however fomatting changed slightly by Chalrie to include bold + change the value placement
 
   rightTemplate D = current work in progress, further dveelopment for using a tress view instead
+
+
+  To Add:
+  - make the data bold
+  - when start, start it open
+  - change the colour with the further indentation: further in different blue/ grey
+  - specific template for the problem list
