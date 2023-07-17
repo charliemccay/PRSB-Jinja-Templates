@@ -7,17 +7,27 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-# STORY TEMPLATE CODE RENDER
-    # return render_template('index.html')
-
-# RIGHT TEMPLATE CODE RENDER
+# TREE TEMPLATE RENDER
     with open('templates/rightTemplate.json') as file:
         json_data = json.load(file)
 
-    with open('templates/newRightTemplate.html') as file:
+    with open('templates/old Template R.html') as file:
         template = Template(file.read())
     
     return template.render(data=json_data)
+
+
+# STORY TEMPLATE CODE RENDER
+    # return render_template('index.html')   
+
+# RIGHT TEMPLATE CODE RENDER
+    # with open('templates/rightTemplate.json') as file:
+    #     json_data = json.load(file)
+
+    # with open('templates/rightTemplate C.html') as file:
+    #     template = Template(file.read())
+    
+    # return template.render(data=json_data)
 
 # TIME LINE TEMAPLTE CODE RENDER
     # with open('templates/time_line.json') as file:

@@ -1,3 +1,14 @@
-Current Issues with Code:
-- Issues with right column width, unsure how to get the right column to be flexible without taking up half of the available space
-  - current fix is using a set width, however this needs a top header section of the table to be used which look visually messy
+Notes for Developer - Right Template Iterations:
+In Ignore:
+  old Template R = First ever jinja template, has the table and iteration create using ChatGPT however it has no formal structuring or if catches
+
+  rightTemplate A = This was the first iteration of the template, it is not functional for general json templates as it has catch statements for specific values 
+
+  rightTemaplet B = this is the iterative code which uses the indentation system, each further point in the json file is further indented
+
+  treeTemplate = original tree template general, not turned into jinja
+
+In GitHub:
+  rightTemplate C = same as template B, however fomatting changed slightly by Chalrie to include bold + change the value placement
+
+  rightTemplate D = current work in progress, further dveelopment for using a tress view instead
