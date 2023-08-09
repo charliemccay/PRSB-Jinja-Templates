@@ -11,7 +11,7 @@ def home():
     with open('templates/rightTemplate.json') as file:
         json_data = json.load(file)
 
-    with open('templates/treeViewTemplate.html') as file:
+    with open('templates/treeViewTemplate.html.jinja') as file:
         template = Template(file.read())
     
     return template.render(data=json_data)
