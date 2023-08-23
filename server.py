@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
 # TREE TEMPLATE RENDER
-    with open('templates/rightTemplate.json') as file:
+    with open('templates/rightTemplatetest.json') as file:
         json_data = json.load(file)
 
     with open('templates/treeViewTemplate.html.jinja') as file:
