@@ -19,49 +19,6 @@
                         ]
                     }
                 ]
-            },
-            "wound care products": {
-                "medical devices entry": [
-                    {
-                        "medical device": {
-                            "device type": [
-                                "336167007 | Non-adherent dressing (physical object) |\nNon-adherent dressing\nNon-adherent dressing (physical object)",
-                                "404918009 | Four layer compression bandaging (physical object) |\nFour layer compression bandaging (physical object)\nFour layer compression bandaging",
-                                "334717009 | Odor absorbing dressing (physical object) |\nOdour absorbing dressing\nOdor absorbing dressing\nOdor absorbing dressing (physical object)"
-                            ]
-                        }
-                    }
-                ],
-                "medication item entry": [
-                    {
-                        "medication item cluster": {
-                            "medication name": "387517004 | Paracetamol (substance) |",
-                            "quantity supplied": {
-                                "value": "10",
-                                "units of measure": "gram"
-                            },
-                            "medication prescribed by": "District nurse"
-                        }
-                    }
-                ]
-            }
-        },
-        "baseline information": {
-            "event date": "Day 17",
-            "date recorded": "Day 17",
-            "performer": {
-                "professional": {
-                    "name": "Gilly Bates",
-                    "role": "158997000 | District nurse (occupation) |",
-                    "specialty": "385784004 | Advanced practice nursing care (regime/therapy) |"
-                }
-            },
-            "author": {
-                "professional": {
-                    "name": "Gilly Bates",
-                    "role": "158997000 | District nurse (occupation) |",
-                    "specialty": "385784004 | Advanced practice nursing care (regime/therapy) |"
-                }
             }
         }
     }
